@@ -5,6 +5,7 @@ import time
 import sys
 import os
 
+os.system('color')
 file_path = sys.argv[1]
 
 def rmdir(directory, bar: Bar):
@@ -23,8 +24,9 @@ def rmdir(directory, bar: Bar):
     except:
         pass
 
-len = sum([len(files) for r, d, files in os.walk(file_path)])
-with Bar(f'Deleting {file_path}', max=len) as b:
+len = sum([len(files) for _, _, files in os.walk(file_path)])
+
+with Bar(f'Deleting Files', max=len, fill="█", width=50) as b:
     rmdir(sys.argv[1], b)
     if os.path.isdir(file_path):
         proc = Popen(rf'powershell -c $fso = New-Object -ComObject scripting.filesystemobject;$fso.DeleteFolder("{file_path}", $true);'.split(), stdin=PIPE, stdout=PIPE, stderr=PIPE, shell=True)

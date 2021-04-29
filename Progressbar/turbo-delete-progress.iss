@@ -16,8 +16,8 @@ AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={userappdata}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=C:\Users\tejas\Desktop\Coding\Big Projects\turbo-delete\LICENSE.txt
-OutputDir=C:\Users\tejas\Desktop
+LicenseFile=C:\Users\xtrem\Desktop\Coding\Big Projects\TurboDelete\LICENSE.txt
+OutputDir=C:\Users\xtrem\Desktop
 OutputBaseFilename=Turbo Delete With Progress Bar Setup
 UninstallDisplayName=Turbo Delete
 Compression=lzma
@@ -31,13 +31,11 @@ SetupWindowTitle = Turbo Delete Setup
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-Source: "C:\Users\tejas\Desktop\Coding\Big Projects\turbo-delete\Progressbar\delete\*"; DestDir: "{userappdata}\Turbo Delete\bin"; Flags: ignoreversion
-Source: "C:\Users\tejas\Desktop\Coding\Big Projects\turbo-delete\Progressbar\register-context-menu.exe"; DestDir: "{userappdata}\Turbo Delete"; Flags: ignoreversion
-Source: "C:\Users\tejas\Desktop\Coding\Big Projects\turbo-delete\Progressbar\unregister-context-menu.exe"; DestDir: "{userappdata}\Turbo Delete"; Flags: ignoreversion
+Source: "C:\Users\xtrem\Desktop\Coding\Big Projects\TurboDelete\Progressbar\delete\*"; DestDir: "{userappdata}\Turbo Delete\bin"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Run]
-Filename: "{userappdata}\Turbo Delete\register-context-menu.exe"
+Filename: "{userappdata}\Turbo Delete\bin\register-context-menu.exe"; Flags: runascurrentuser;
 
 [UninstallRun]
-Filename: "{userappdata}\Turbo Delete\unregister-context-menu.exe"
+Filename: "{userappdata}\Turbo Delete\bin\unregister-context-menu.exe"; Flags: runascurrentuser;
